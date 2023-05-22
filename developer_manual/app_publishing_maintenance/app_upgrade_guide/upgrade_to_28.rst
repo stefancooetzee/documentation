@@ -37,7 +37,7 @@ Deprecated APIs
 Removed APIs
 ^^^^^^^^^^^^
 
-* tbd
+* ``OC.appSettings`` API was deprecated since Nextcloud 17 and is now removed
 
 Back-end changes
 ----------------
