@@ -224,6 +224,15 @@ For example, resolving ``https://www.themoviedb.org/movie/70981`` if the ``integ
       }
     }
 
+Render links in clients
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Clients can choose to support some rich objects.
+Developers can follow the rich object formatting recommendations to provide generic information in some cases.
+The rich object type is not used to predict the data structure.
+We rather recommend developers to set rich object attributes respecting a strict format for some common types.
+
+More details in `Provide generic data for clients <data-for-clients_>`__
 
 Use the Smart Picker in your app
 --------------------------------
@@ -286,6 +295,21 @@ the Smart Picker.
         .catch(error => {
             console.error('Smart Picker promise rejected', error)
         })
+
+
+Use the Smart Picker in clients
+-------------------------------
+
+############## TODO
+
+Client can implement partial support of the smart picker.
+As the custom picker components are web components, clients might not want or be able to render them.
+
+List the smart picker providers
+
+Use the unified search API
+
+Update a provider last usage date
 
 Register a reference provider
 -----------------------------
@@ -496,6 +520,72 @@ in a custom fashion:
     }
     </script>
 
+.. _data-for-clients:
+
+Provide generic data for clients
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the web interface, the links that your app resolves are rendered with the OpenGraph widget
+or the custom reference widget you implemented. So you have complete freedom on which data format you put in your rich objects
+because you also control the web rendering implementation.
+
+But as the web UI components cannot be used by desktop or mobile clients, they have to specifically support some rich objects
+that are properly formatted.
+
+Here are some formatting suggestions for a few use cases. Use them if you want your resolved links to be rendered in clients.
+The idea is to add a generic attribute in your rich objects, regardless of the rich object type.
+
+Version control issue
+^^^^^^^^^^^^^^^^^^^^^
+
+Set the rich object's ``vcs_issue`` attribute to an object which contains those attributes:
+
+* ``id``: The issue ID (number)
+* ``url``: The issue page URL
+* ``title``: The issue title
+* ``comment_count``: The number of comments in the issue
+* ``state``: The issue state ('open' or 'closed')
+* ``labels``: An array of labels. A label is an object with those attributes:
+    * ``color``: Hexadecimal color code
+    * ``name``: The label name
+* ``created_at``: The creation timestamp
+* ``author``: The user ID or name of the issue creator
+
+Example implementation: `GitHub integration <https://github.com/nextcloud/integration_github/blob/e6792ea0aadef4f5b8faaaaa163a0cf473d86157/lib/Reference/GithubIssuePrReferenceProvider.php#L135>`_
+
+Version control pull request
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the rich object's ``vcs_pull_request`` attribute to an object which contains the same attributes as in ``vcs_issue`` plus these ones:
+
+* ``merged``: Is it merged? (boolean)
+* ``draft``: Is it a draft? (boolean)
+
+Example implementation: `GitHub integration <https://github.com/nextcloud/integration_github/blob/e6792ea0aadef4f5b8faaaaa163a0cf473d86157/lib/Reference/GithubIssuePrReferenceProvider.php#L162>`_
+
+Version control issue or pull request comment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the rich object's ``vcs_comment`` attribute to an object which contains those attributes:
+
+* ``url``: A direct link/permalink to the comment
+* ``body``: The comment content in plain text or markdown
+* ``author``: The user ID or name of the comment author
+* ``created_at``: The creation timestamp
+* ``updated_at``: The last edition timestamp
+
+``vcs_comment`` can be set in addition to ``vcs_issue`` or ``vcs_pull_request``.
+
+
+Images
+^^^^^^
+
+Set the rich object's ``image_TYPE`` attribute to ``true``. The clients will then know they can render this as an image
+using the reference title, description and image URL that you have set.
+
+Type can be ``gif``, ``jpeg``, ``png`` etc...
+
+Example implementation: `Giphy integration <https://github.com/nextcloud/integration_giphy/blob/6c07af9c99014599bd3582a26e4fd99678b275ef/lib/Reference/GiphyReferenceProvider.php#L114-L124>`_
 
 Extend the Smart Picker
 -----------------------
