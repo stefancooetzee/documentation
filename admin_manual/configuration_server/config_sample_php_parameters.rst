@@ -4002,6 +4002,18 @@ conflicts are resolved.
 
 Defaults to ``''`` (empty string)
 
+configfilemode
+^^^^^^^^^^^^^^
+
+
+::
+
+	'configfilemode' => 0640,
+
+config.php file mode in octal notation.
+
+Defaults to ``0640`` (writable by user, readable by group).
+
 copied_sample_config
 ^^^^^^^^^^^^^^^^^^^^
 
