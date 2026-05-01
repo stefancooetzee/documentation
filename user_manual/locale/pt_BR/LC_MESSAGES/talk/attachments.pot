@@ -43,9 +43,9 @@ msgid ""
 " choosing the little paperclip and selecting where you'd like to pick the "
 "file from."
 msgstr ""
-"Em segundo lugar, você pode selecionar um arquivo do Nextcloud Arquivos ou "
-"de um gerenciador de arquivos clicando no ícone do clipe de papel e "
-"escolhendo de onde deseja selecionar o arquivo."
+"Segundo, você pode selecionar um arquivo do Nextcloud Arquivos ou de um "
+"gerenciador de arquivos clicando no ícone do clipe de papel e escolhendo de "
+"onde deseja selecionar o arquivo."
 
 #: ../../talk/attachments.rst:23
 msgid ""
