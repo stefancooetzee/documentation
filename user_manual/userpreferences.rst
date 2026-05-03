@@ -41,7 +41,7 @@ include the following:
 * Social sharing links
 * Nextcloud version
 
-.. note:: Available options and settings depending on your administrator's configuration.
+.. note:: Available options and settings depend on your administrator's configuration.
    If you are not able to change the password or the display name in your personal settings,
    please contact your administrator for help.
 
@@ -73,7 +73,7 @@ Someone with a public facing role such as marketing or sales might want to share
 Restrict who can see your profile data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the profile is enabled by your administrator, then your profile data can be read by other users and guest.
+If the profile is enabled by your administrator, then your profile data can be read by other users and guests.
 To control who can see which information you can adjust the scopes already mentioned:
 
 * **Private** will only allow you and users you have added to your phone book to see the data
@@ -87,7 +87,7 @@ On the personal settings you can find the button for profile visibility:
       :alt: screenshot of the profile visibility button in personal settings
 
 
-Which allows to configure the visibility for each profile attribute:
+Which allows you to configure the visibility for each profile attribute:
 
    .. figure:: images/userdata-visibility.png
       :alt: screenshot of scope dropdown on personal information form field
