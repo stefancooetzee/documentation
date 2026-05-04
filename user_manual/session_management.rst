@@ -38,14 +38,14 @@ those individually if necessary:
 .. figure:: images/settings_devices_add.png
      :alt: Adding a new device.
 
-.. note:: You have only access to the device password when creating it,
-   Nextcloud will not save the plain password, hence it's recommended to
+.. note:: You only have access to the device password when creating it.
+   Nextcloud will not save the plain password, so it is recommended to
    enter the password on the new client immediately.
 
 
 .. note:: If you use :doc:`user_2fa` for your account,
    device-specific passwords are the only way to configure clients. The
-   server will deny connections of clients using your login password then.
+   server will then deny connections from clients using your login password.
 
 Device-specific passwords and password changes
 ----------------------------------------------
