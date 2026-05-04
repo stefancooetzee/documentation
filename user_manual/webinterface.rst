@@ -19,8 +19,8 @@ you use the latest and supported version of a browser from this list:
 * Apple **Safari** (Desktop and iOS)
 * Microsoft **Edge**
 
-.. note:: Not all versions are supported. Nextcloud is tested and built to work with `these versions only.
-   <https://browserslist.dev/?q=PjAuMjUlLCBub3Qgb3BfbWluaSBhbGwsIG5vdCBkZWFkLCBGaXJlZm94IEVTUg==>`_
+.. note:: Not all versions are supported. Nextcloud is tested and built to work with
+   `these browser versions <https://browserslist.dev/?q=PjAuMjUlLCBub3Qgb3BfbWluaSBhbGwsIG5vdCBkZWFkLCBGaXJlZm94IEVTUg==>`_ only.
 
 .. note:: If you want to use Nextcloud Talk you need to run Mozilla **Firefox** 52+
    or Google **Chrome**/Chromium 49+ to have the full experience with video calls and
@@ -57,7 +57,7 @@ The Nextcloud user interface contains the following fields and functions:
 
 * **Navigation Bar** (4): Located over the main viewing window (the Application
   View), this bar provides a type of breadcrumbs navigation that enables you to
-  migrate to higher levels of the folder hierarchy up to the root level (home).
+  navigate to higher levels of the folder hierarchy up to the root level (home).
 
 * **New** button (5): Located in the Navigation Bar, the ``New`` button
   enables you to create new files, new folders, or upload files.

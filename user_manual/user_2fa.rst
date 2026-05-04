@@ -75,6 +75,7 @@ If the code was correct you will be redirected to your Nextcloud account.
 
 Using two-factor authentication with hardware tokens
 ----------------------------------------------------
+
 You can use two-factor authentication based on hardware tokens. The following devices are known to work:
 
 *    TOTP based:
@@ -92,12 +93,12 @@ Using client applications with two-factor authentication
 
 Once you have enabled 2FA, your clients will no longer be able to connect with
 just your password unless they also have support for two-factor authentication.
-To solve this, you should generate device specific passwords for them. See 
+To solve this, you should generate device-specific passwords for them. See
 :doc:`session_management` for more information on how to do this.
 
 
 Considerations
 --------------
 
-If you use WebAuthn to login to your Nextcloud be sure to not use the same token for 2FA. As this
+If you use WebAuthn to log in to your Nextcloud, be sure to not use the same token for 2FA, as this
 would mean you are again only using a single factor.

@@ -404,6 +404,7 @@ jobs:
           args: |
             --root-dir "$(pwd)/stage"
             --offline --no-progress
+            --remap "https://docs.nextcloud.com/server/latest/ file://$(pwd)/stage/${{ needs.stage-and-check.outputs.branch_name }}/"
             --remap "https://docs.nextcloud.com/server/ file://$(pwd)/stage/"
             --exclude 'go\.php' --exclude 'mailto:' --exclude-path '.*/404\.html' --exclude-path '.*/_static/.*'
             --exclude "/user_manual/" --include "/user_manual/en/"
